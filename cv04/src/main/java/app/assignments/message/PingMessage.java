@@ -16,7 +16,9 @@
 
 package app.assignments.message;
 
+import org.springframework.stereotype.Component;
 
+@Component("pingMessage")
 public class PingMessage implements Message {
 
     public String getSender() {

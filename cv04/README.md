@@ -3,7 +3,7 @@
 __a)__ Neměňte žádné soubory a nakonfigurujte aplikační kontext Springu pomocí XML a bez využití funkce Autowire tak,
 aby se metoda Main úspěšně provedla.
 
-__b)__ Modifikujte program tak, aby místo v XML definoval beany pomocí anotace @Component a využíval funkci Autowire
+__b)__ Modifikujte program tak, aby místo v XML definoval beany pomocí anotace @Component a využíval funkci Autowire.
 Jako parametr metody getBean používejte namísto názvu příslušnou třídu. Hlavičku XML rozšiřte o namespace:
 
 `xmlns:context="http://www.springframework.org/schema/context"`
