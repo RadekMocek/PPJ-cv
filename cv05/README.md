@@ -4,7 +4,7 @@ Modifikujte projekt z minulého cvičení tak, že zcela odstraňte XML konfigur
 
 `ApplicationContext context = new AnnotationConfigApplicationContext(Main.class);`
 
-__a)__ Odstraňte všechny anotace @Component a nahraďte je definicemi beanů pomocí anotace @Bean v dalších nově přidaných konfiguračních třídách. Dependency Injection ve třídě replyMessage proveďte pomocí anotace @Autowire nad příslušným atributem.
+__a)__ Odstraňte všechny anotace @Component a nahraďte je definicemi beanů pomocí anotace @Bean v dalších nově přidaných konfiguračních třídách. Dependency Injection ve třídě replyMessage proveďte pomocí anotace @Autowired nad příslušným atributem.
 
 __b)__ Vyzkoušejte dále anotaci @PostConstruct a zkuste také vybrané Beany definovat s různým rozsahem platnosti (Scope).
 

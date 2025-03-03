@@ -1,6 +1,6 @@
 package app.assignments.app;
 
-import app.assignments.configurations.MessageConfig;
+import app.assignments.configurations.ReplyMessageConfig;
 import app.assignments.configurations.WriterConfig;
 import app.assignments.message.CustomMessage;
 import app.assignments.message.Message;
@@ -16,10 +16,9 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 
 @Configuration
-@Import({
-        MessageConfig.class,
-        WriterConfig.class
-})
+/*
+@Import({ReplyMessageConfig.class, WriterConfig.class})
+/**/
 @ComponentScan("app.assignments")
 public class Main {
 
