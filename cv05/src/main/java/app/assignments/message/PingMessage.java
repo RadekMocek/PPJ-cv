@@ -17,10 +17,23 @@
 package app.assignments.message;
 
 
+import javax.annotation.PostConstruct;
+
 public class PingMessage implements Message {
 
+    private static int number = 0;
+
+    @PostConstruct
+    public void postConstruct() {
+        System.out.println("PingMessagePostConstruct"); // ???
+    }
+
+    public PingMessage() {
+        number++;
+    }
+
     public String getSender() {
-        return "ping";
+        return "ping #" + number;
     }
 
     public String getRecipient() {
