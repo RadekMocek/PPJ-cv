@@ -2,13 +2,14 @@
 
 ## Profily a defaultní konfigurace logování
 
-1. Vytvořte konfigurační třídu WriterConfiguration v namespace ppj.assignments.configs, která definuje bean implementující rozhraní ppj.assignments.writer.Writer pomocí implementace DevelWriter pro profil devel a ProdWriter pro ostatní profily
+1. Vytvořte konfigurační třídu `WriterConfiguration` v namespace `ppj.assignments.configs`, která definuje bean implementující rozhraní `ppj.assignments.writer.Writer` pomocí implementace `DevelWriter` pro profil devel a `ProdWriter` pro ostatní profily
 
-2. Nakofigurujte aktivní profil pomocí konfigurační proměnné spring.profiles.active v application.properties. Budeme používat dva profily: devel a prod.
+2. Nakonfigurujte aktivní profil pomocí konfigurační proměnné `spring.profiles.active` v `application.properties`. Budeme používat dva profily: devel a prod.
 
-3. Vytvořte profilově závislé properties soubory (application-$(profile).properties) a v nich nadefinujte proměnnou app.desc (pro každý profil bude mít jinou hodnotu). Proč není v profilu debug provedeno zalogování příslušné hlášky?
+3. Vytvořte profilově závislé properties soubory (`application-$(profile).properties`) a v nich nadefinujte proměnnou `app.desc` (pro každý profil bude mít jinou hodnotu). Proč není v profilu debug provedeno zalogování příslušné hlášky?
+   * log.debug vs. log.info – výchozí log level je INFO, ale devel loguje DEBUG; pro výpis devel by tedy bylo nutné snížit root log level na DEBUG
 
-4. Zkuste i jiné způsoby nastavení aktivního profilu (argumenty při spuštění, systémové proměnné, programově – setAdditionalProfiles)
+4. Zkuste i jiné způsoby nastavení aktivního profilu (argumenty při spuštění, systémové proměnné, programově – `setAdditionalProfiles`)
 
 ## Logback – detailní konfigurace
 

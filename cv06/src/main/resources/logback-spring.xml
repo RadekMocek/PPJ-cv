@@ -1,0 +1,35 @@
+<configuration>
+
+    <!-- Nastavte logování (appender) do konzole s následujícím enkodérem -->
+    <appender name="Terminal" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Kořenový logger na úroveň DEBUG – sledujte výstup Springu, poté jej nastavte na INFO -->
+    <root level="INFO">
+        <appender-ref ref="Terminal" />
+        <appender-ref ref="File" />
+    </root>
+
+    <!-- Pro namespace Springu nastavte úroveň na WARN -->
+    <logger name="org.springframework" level="WARN" />
+
+    <!-- Nastavte Logback tak, aby pro profil devel logoval namespace ppj od úrovně DEBUG a pro ostatní profily od úrovně INFO -->
+    <springProfile name="devel">
+        <logger name="ppj" level="DEBUG" />
+    </springProfile>
+    <springProfile name="prod">
+        <logger name="ppj" level="INFO" />
+    </springProfile>
+
+    <!-- Nakonfigurujte Logback tak, aby zapisoval výstup kořenového loggeru i do souboru log.txt -->
+    <appender name="File" class="ch.qos.logback.core.FileAppender">
+        <file>logs/log.txt</file>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+</configuration>
